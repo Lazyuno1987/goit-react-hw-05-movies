@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+
 import { Cast } from './views/Cast/Cast';
 import Navigation from './Navigation/Navigation';
 import { lazy, Suspense } from 'react';

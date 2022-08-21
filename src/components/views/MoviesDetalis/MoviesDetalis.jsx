@@ -12,7 +12,7 @@ import css from './MoviesDetalis.module.css';
 export default function MoviesDetalis() {
   const [movieInfo, setMovieInfo] = useState([]);
   const { movieId } = useParams();
-    const location = useLocation();
+  const location = useLocation();
 
   const navigate = useNavigate();
 

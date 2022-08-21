@@ -3,7 +3,8 @@ import { toast } from 'react-toastify';
 import { SearchMoviesFetch } from '../../servises/Servises';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import css from './Movies.module.css';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Movies() {
   const location = useLocation();
   const [name, setName] = useState('');
@@ -21,7 +22,7 @@ export default function Movies() {
     if (name.trim() === '') {
       toast('Enter something');
       return;
-    }
+    } 
 
     setSearchParams({ query: name });
 
@@ -29,12 +30,17 @@ export default function Movies() {
   };
   useEffect(() => {
     if (query) {
-      SearchMoviesFetch(query).then(setMovies);
-    }
+      SearchMoviesFetch(query).then(setMovies)
+
+   } 
   }, [query]);
+
+
+
 
   return (
     <>
+       <ToastContainer autoClose={3000} />
       <form className={css.container} onSubmit={handelSubmit}>
         <input
           className={css.input}
@@ -50,14 +56,15 @@ export default function Movies() {
         </button>
       </form>
       <ul>
-        {movies &&
-          movies.map(({ title, id }) => (
+        
+        {movies && movies.map(({ title, id }) => (
             <li key={id}>
               <Link to={`/movies/${id}`} state={{ from: location }}>
                 {title}
               </Link>
             </li>
-          ))}
+        ))}
+       
       </ul>
     </>
   );
