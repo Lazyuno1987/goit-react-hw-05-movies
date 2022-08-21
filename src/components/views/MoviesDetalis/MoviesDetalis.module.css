@@ -1,0 +1,26 @@
+.container {
+    margin-left: 40px;
+}
+.button{
+    padding: 5px;
+    border-color: inherit;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+.genres{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+}
+.text{
+    margin: 0;
+margin-left: 5px;
+
+}
+.card{
+    display: flex;
+}
+.right{
+    margin-left: 15px;
+}
