@@ -13,7 +13,8 @@ export default function MoviesDetalis() {
   const [movieInfo, setMovieInfo] = useState([]);
   const { movieId } = useParams();
   const location = useLocation();
-
+  console.log(location)
+  console.log(location.state.from)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -63,10 +64,10 @@ export default function MoviesDetalis() {
       <div>
         <ul>
           <li>
-            <Link to="cast">Cast</Link>
+            <Link to="cast" state= {{from: location?.state?.from ?? '/'}}>Cast</Link>
           </li>
           <li>
-            <Link to="reviews">Reviews</Link>
+            <Link to="reviews" state= {{from: location?.state?.from ?? '/'}}>Reviews</Link>
           </li>
         </ul>
       </div>
